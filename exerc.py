@@ -279,8 +279,76 @@ while n != 0:
         a += 1
 print("a quantidade de pares foi: " ,  a)
 
-"""
 
+# -------------------------
+# NÍVEL 4 — LISTAS
+# -------------------------
+
+# 26. Ler 5 números e armazenar em lista
+# Descrição: Receber cinco números do usuário e guardar todos em uma lista.
+
+# 27. Mostrar a lista em ordem inversa
+# Descrição: Exibir os elementos da lista do último para o primeiro.
+
+# 28. Calcular a média de uma lista de notas
+# Descrição: Receber uma lista de notas e calcular a média aritmética.
+
+# 29. Separar números pares e ímpares
+# Descrição: Receber uma lista de números e criar duas listas separadas: uma de pares e outra de ímpares.
+
+# 30. Intercalar duas listas
+# Descrição: Receber duas listas e criar uma terceira lista intercalando os elementos das duas.
+
+
+lista = []
+t = 0
+while t != 5:
+    lista.append(int(input("Numero? ")))
+    t += 1
+    if t == 5:
+        print(lista)
+
+
+l = [1,2,3,4,5]
+print(l)
+l.reverse()
+print(l)
+
+
+no = [2,4,6,8,10]
+a = 0
+b = 0
+tn = len(no)
+count = 0
+for n in no:
+    a += n
+    count += 1
+    if count == tn:
+        b = a / count
+        print('media e: ', b)
+
+
+li = [1,2,3,4,5,6,7,8,9,10]
+p = []
+i = []
+for l in li:
+    if l % 2 == 0:
+        p.append(l)
+    else:
+        i.append(l)
+print(p)
+print(i)
+
+
+li1 = [0,2,4,6,8]
+li2 = [1,3,5,7,9]
+li3 = []
+for i in range(len(li1)):
+    li3.append(li1[i])
+    li3.append(li2[i])
+print(li3)
+
+"""
 
 
 
