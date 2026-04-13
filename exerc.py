@@ -348,7 +348,89 @@ for i in range(len(li1)):
     li3.append(li2[i])
 print(li3)
 
+
+# -------------------------
+# NÍVEL 5 — FUNÇÕES
+# -------------------------
+
+# 31. Criar função que soma dois números
+# Descrição: Criar uma função que recebe dois números como parâmetro e retorna a soma.
+
+# 32. Criar função que retorna o maior número
+# Descrição: Criar uma função que recebe dois ou mais números e retorna o maior valor.
+
+# 33. Criar função que calcula fatorial
+# Descrição: Criar uma função que recebe um número e retorna seu fatorial.
+
+# 34. Criar função que calcula média
+# Descrição: Criar uma função que recebe uma lista de números e retorna a média.
+
+# 35. Criar função que verifica se um número é primo
+# Descrição: Criar uma função que recebe um número e retorna True se ele for primo ou False caso contrário.
+
+
+def soma(s1,s2):
+    s3 = s1 + s2
+    return s3
+soma(2,4)
+
+
+def maio():
+    ma = []
+    cont = 0
+    while len(ma) != 5:
+        ma.append(int(input('5 numeros?')))
+    ma.sort()
+    print(ma[-1])
+maio()
+
+
+import math
+def fat(o):
+    r = math.factorial(o)
+    return r
+
+
+def media():
+    me = []
+    a = 0
+    ml = 0
+    while len(me) != 5:
+        me.append(int(input('5 numeros para media?')))
+        ml += 1
+    for m in me:
+        a += m
+    b = (a / ml)
+    print(b)
+media()
+
+
+def primo(a):
+    if a < 2:
+        return False
+    for i in range(2, a):
+        if a % i == 0:
+            return False
+    return True
+print(primo(12))
+
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
