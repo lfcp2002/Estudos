@@ -414,23 +414,67 @@ def primo(a):
     return True
 print(primo(12))
 
+
+# -------------------------
+# NÍVEL 6 — STRINGS
+# -------------------------
+
+# 36. Contar caracteres em uma frase
+# Descrição: Receber uma frase do usuário e informar a quantidade de caracteres.
+
+# 37. Contar vogais em uma frase
+# Descrição: Receber uma frase e contar quantas vogais ela possui.
+
+# 38. Verificar se uma palavra é palíndromo
+# Descrição: Receber uma palavra e verificar se ela é igual quando lida de trás para frente.
+
+# 39. Inverter uma string
+# Descrição: Receber uma string e exibir sua versão invertida.
+
+# 40. Converter texto para maiúsculo
+# Descrição: Receber uma frase e exibir toda em letras maiúsculas.
+
+
+frase = "Ola Mundo"
+print(len(frase))
+
+
+frase = "Ola Mundo"
+vog = ("a","e","i","o","u")
+v = 0
+for l in frase:
+    for g in vog:
+        if l == g:
+            v += 1
+print(v)
+
+
+pala = input("Digite uma palavra")
+mini = pala.lower()
+sepa = []
+for m in mini:
+    sepa += m
+sepa.reverse()
+j = "".join(sepa)
+if j == mini:
+    print("e p")
+else: print('n e')
+
+
+st = input("palavra? ")
+sep = []
+for s in st:
+    sep += s
+sep.reverse()
+j = ''.join(sep)
+print(j)
+
+
+tex = 'ola mundo'
+m = tex.upper()
+print(m)
+
 """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
