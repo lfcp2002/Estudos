@@ -474,8 +474,81 @@ tex = 'ola mundo'
 m = tex.upper()
 print(m)
 
-"""
 
+nivel 7 - em lição no momento
+
+
+# -------------------------
+# NÍVEL 8 — CLASSES
+# -------------------------
+
+# 46. Criar classe Bola
+# Descrição: Criar uma classe Bola com atributos de cor, circunferência e material.
+
+# 47. Criar classe Quadrado
+# Descrição: Criar uma classe Quadrado com atributo lado e métodos para calcular área e perímetro.
+
+# 48. Criar classe Pessoa
+# Descrição: Criar uma classe Pessoa com atributos nome, idade e métodos para apresentar informações.
+
+# 49. Criar classe ContaBancaria
+# Descrição: Criar uma classe ContaBancaria com métodos para sacar, depositar e verificar saldo.
+
+# 50. Criar classe Produto
+# Descrição: Criar uma classe Produto com atributos nome, preço e quantidade, e método para calcular valor total.
+
+
+class Bola:
+    def __init__(self,cor,circunfer,material):
+        self.cor = cor
+        self.circunfer = circunfer
+        self.material = material
+Bola1 = Bola("amarelo", 2 ,"Plastico")
+print(Bola1.cor)
+
+
+class Quadrado:
+    def __init__(self,lado):
+        self.lado = lado
+    def Metodo(self):
+        return "P = ", self.lado * 4 , ", A = ", self.lado * self.lado
+Quadrado1 = Quadrado(4)
+print(Quadrado1.Metodo())
+
+
+class pessoa:
+    def __init__(self,nome,idade):
+        self.nome = nome
+        self.idade = idade
+    def metodo(self):
+        return "My name is ",self.nome,"I have", self.idade
+pessoa1 = pessoa("Luis",23)
+print(pessoa1.metodo())
+
+
+class contaB:
+    def __init__(self,saldo):
+        self.saldo = saldo
+    def sacar(self,saque):
+        self.saldo = self.saldo - saque
+    def depositar(self,deposito):
+        self.saldo = self.saldo + deposito
+    def checar(self):
+        return self.saldo
+contaB1 = contaB(10)
+
+
+class Produto:
+    def __init__(self,nome,preco,quantidade):
+        self.nome = nome
+        self.preco = preco
+        self.quantidade = quantidade
+    def calcular(self):
+        return self.nome, " Preço: ",self.quantidade * self.preco
+Produto1 = Produto('lapis',12.99,4)
+print(Produto.calcular(Produto1))
+
+"""
 
 
 
