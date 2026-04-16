@@ -475,7 +475,62 @@ m = tex.upper()
 print(m)
 
 
-nivel 7 - em lição no momento
+# -------------------------
+# NÍVEL 7 — ARQUIVOS
+# -------------------------
+
+# 41. Ler arquivo e contar linhas
+# Descrição: Abrir um arquivo de texto e informar quantas linhas ele possui.
+
+# 42. Contar palavras em arquivo
+# Descrição: Abrir um arquivo e contar o número total de palavras.
+
+# 43. Contar caracteres em arquivo
+# Descrição: Abrir um arquivo e contar o número total de caracteres.
+
+# 44. Ler números de arquivo e calcular média
+# Descrição: Ler números de um arquivo e calcular a média aritmética.
+
+# 45. Salvar dados digitados em arquivo
+# Descrição: Receber informações do usuário e armazená-las em um arquivo de texto.
+
+
+with open("arquivo.txt", "r") as f:
+    t = 0
+    for l in f:
+        t += 1
+print(t)
+
+
+with open("arquivo.txt", "r") as f:
+    t = 0
+    for l in f:
+        t += len(l.split())
+print(t)
+
+
+with open("arquivo.txt", "r") as f:
+    t = 0
+    for l in f:
+        for p in l:
+            t += 1
+print(t)
+
+
+with open("arquivo.txt", "r") as f:
+    n = 0
+    c = 0
+    for l in f:
+        for v in l.split():
+                n += float(v)
+                c += 1
+m = n / c
+print(m)
+
+
+with open("arquivo.txt", "a") as v:
+    f = input("Digite algo: ")
+    v.write(f + "\n")
 
 
 # -------------------------
