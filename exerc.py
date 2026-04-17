@@ -603,7 +603,40 @@ class Produto:
 Produto1 = Produto('lapis',12.99,4)
 print(Produto.calcular(Produto1))
 
+
+# -------------------------
+# NÍVEL 9 — PROJETOS REAIS
+# -------------------------
+
+# 51. Criar jogo de adivinhação
+# Descrição: Desenvolver um jogo onde o usuário tenta adivinhar um número aleatório.
+
+
+import random
+numero = random.randint(1, 100)
+tent = 0
+cont = 0
+print("Voce tem ate 6 tentativas para conseguir acertar o numero!\nO Numero esta entre 1 e 100")
+while cont != 6:
+    tent = int(input("Chute?"))
+    if tent != numero:
+        if numero > tent:
+            print("Numero e Maior! ")
+        else: print("Numero e Menor! ")
+    cont += 1
+    if numero == tent:
+        print("Parabens, voce conseguiu!")
+        break
+
 """
+
+
+
+
+
+
+
+
 
 
 
