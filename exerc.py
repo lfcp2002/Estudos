@@ -628,13 +628,38 @@ while cont != 6:
         print("Parabens, voce conseguiu!")
         break
 
+
+# 52. Criar jogo da forca
+# Descrição: Criar um jogo de forca com palavras pré-definidas ou carregadas de arquivo.
+
+
+plv = "forca"
+plv2 = list(plv)
+cont = 5
+progresso = ["_"] * len(plv2)
+print("Voce possui 5 tentativas!\nDica: Jogou ou joga a muito pouco tempo!")
+while cont != 0:
+    print("\nPalavra:", " ".join(progresso))
+    tent = input("Chute uma letra: ")
+    acertou = False
+    for i in range(len(plv2)):
+        if tent == plv2[i]:
+            progresso[i] = tent
+            acertou = True
+    if acertou:
+        print("Você acertou uma letra!")
+    else:
+        cont -= 1
+        print("Erro! Tentativas restantes:", cont)
+    if "_" not in progresso:
+        print("\nVocê ganhou!")
+        print("Palavra:", "".join(progresso))
+        break
+if "_" in progresso:
+    print("\nVocê perdeu")
+    print("A palavra era:", plv)
+
 """
-
-
-
-
-
-
 
 
 
