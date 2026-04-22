@@ -659,13 +659,49 @@ if "_" in progresso:
     print("\nVocê perdeu")
     print("A palavra era:", plv)
 
+
+# 53. Criar agenda de contatos
+# Descrição: Criar um sistema que armazena nomes, telefones e e-mails de contatos.
+
+
+contatos = {
+    "Luis":{"nome":"luis", "numero":123 ,"email":"luis@"},
+    "Felipe":{"nome":"felipe", "numero":456 ,"email":"felipe@"}
+}
+def menu():
+    print("selecione uma opção:")
+    op = input("1 - Adicionar contato\n2 - Ver contatos\n3 - Sair")
+    if op == "1":
+        adicionar()
+    elif op == "2":
+        ver()
+    elif op == "3":
+        return False
+    else: print("Selecione uma opção válida!")
+def adicionar():
+    r = input("Deseja adicionar um novo contato?\nTecle 1 para sim e 0 para não!")
+    if r == "1":
+        nome = input("Digite o nome: ")
+        numero = input("Digite o número: ")
+        email = input("Digite o email: ")
+        contatos[nome] = {
+            "nome": nome,
+            "numero": numero,
+            "email": email
+        }
+        print("Contato adicionado!")
+    else: return
+def ver():
+    print(contatos)
+    return
+def sair():
+    print("Voce saiu.")
+while True:
+    if menu() == False:
+        sair()
+        break
+
 """
-
-
-
-
-
-
 
 
 
