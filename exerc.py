@@ -701,7 +701,74 @@ while True:
         sair()
         break
 
+
+# 54. Criar sistema bancário simples
+# Descrição: Criar um sistema que permita criar contas, depositar, sacar e verificar saldo.
+
+
+conta = {
+    "Luis":{"nome":"luis", "saldo":20},
+    "Felipe":{"nome":"felipe", "saldo":45}
+}
+
+def menu():
+    print("Selecione uma opçao:")
+    op = input("1 - Criar Conta\n2 - Depositar\n3 - Sacar\n4 - Ver\n5 - Sair")
+    if op == "1":
+        criar()
+    elif op == "2":
+        depositar()
+    elif op == "3":
+        sacar()
+    elif op == "4":
+        ver()
+    elif op == "5":
+        return False
+    else:
+        print("Selecione uma opção válida!")
+
+def criar():
+    nome = input("Digite o nome do usuario: ")
+    if nome in conta:
+        print("Usuario ja Existente!")
+        return False
+    saldo = 0
+    conta[nome] = {
+        "nome": nome,
+        "saldo": 0
+    }
+    print(f"Usuário {nome} foi criado com sucesso!")
+    return False
+
+def depositar():
+    n = input("Qual o nome do usuario desejado?")
+    if n in conta:
+        saldo = int(input("Digite o valor do deposito: "))
+        conta[n]["saldo"] += saldo
+    else: print("Digite um usuario valido!")
+    return False
+
+def sacar():
+    n = input("Qual o nome do usuario desejado?")
+    if n in conta:
+        saldo = int(input("Digite o valor do saque: "))
+        if conta[n]["saldo"] >= saldo:
+            conta[n]["saldo"] -= saldo
+        else: print("Valor insuficiente! ")
+    else: print("Digite um usuario valido!")
+    return False
+
+def ver():
+    n = input("Qual o nome do usuario desejado?")
+    if n in conta:
+        print(conta[n]["saldo"])
+    else: print("Digite um usuario valido!")
+    return False
+
 """
+
+
+
 
 
 
