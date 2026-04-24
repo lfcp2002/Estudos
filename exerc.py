@@ -765,7 +765,33 @@ def ver():
     else: print("Digite um usuario valido!")
     return False
 
+
+# 55. Criar gerenciador de tarefas
+# Descrição: Criar um sistema para adicionar, remover e listar tarefas.
+
+
+lista = []
+def adcinar():
+    t = input("Tarefa a ser adicionada? ")
+    if t in lista:
+        print("Tarefa já existe!")
+    else: lista.append(t)
+    return
+def remover():
+    t = input("Tarefa a ser removida? ")
+    if t in lista:
+        lista.remove(t)
+        print("Tarefa removida!")
+    else: print("Tarefa não listada!\nTente novamente!")
+    return
+def listar():
+    print(lista)
+    return
+
 """
+
+
+
 
 
 
