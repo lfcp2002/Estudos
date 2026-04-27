@@ -788,7 +788,53 @@ def listar():
     print(lista)
     return
 
+
+# 56. Criar calculadora completa
+# Descrição: Criar uma calculadora que realize operações básicas como soma, subtração, multiplicação e divisão.
+
+
+def menu():
+    print("Calculadora, Qual tipo de operação você quer fazer?")
+    r = input("1 Para soma:\n2 Para subtração:\n3 Para multiplicação:\n4 para divisão: ")
+    if r == "1":
+        soma()
+    elif r == "2":
+        sub()
+    elif r == "3":
+        multi()
+    elif r == "4":
+        divi()
+    else: print("Escolha um op valida!")
+    return False
+
+def soma():
+    x1 = float(input("Primeiro numero a ser somado? "))
+    x2 = float(input("Segundo numero a ser somado? "))
+    print("O resultado e: " , (x1 + x2))
+    return
+def sub():
+    x1 = float(input("Primeiro numero a ser subtraido? "))
+    x2 = float(input("Segundo numero a ser subtraido? "))
+    print("O resultado e: " , (x1 - x2))
+    return
+def multi():
+    x1 = float(input("Primeiro numero a ser multiplicado? "))
+    x2 = float(input("Segundo numero a ser multiplicado? "))
+    print("O resultado e: " , (x1 * x2))
+    return
+def divi():
+    x1 = float(input("Primeiro numero a ser dividido? "))
+    x2 = float(input("Segundo numero a ser dividido? "))
+    print("O resultado e: ", (x1 / x2))
+    return
+
 """
+
+
+
+
+
+
 
 
 
