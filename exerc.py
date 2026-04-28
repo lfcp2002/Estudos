@@ -828,10 +828,42 @@ def divi():
     print("O resultado e: ", (x1 / x2))
     return
 
+
+# 57. Criar controle de estoque
+# Descrição: Criar um sistema que gerencia produtos, quantidades e preços em estoque.
+
+
+produtos = {
+    "Mesas":{"nome":"mesa_grande", "quantidade":2 , "valor": 80.99},
+    "Cadeiras":{"nome":"cadeira_grande", "quantidade":5 , "valor": 20.00}
+}
+def menu():
+    print("Produtos Cadastrados: " , produtos)
+    r = input("Qual Produto deseja gerenciar? ")
+    if r in produtos:
+        print(produtos[r]["nome"])
+        gerenciar(r)
+    else: print("Não Encontrado, tente novamente!")
+    return
+def gerenciar(r):
+    if r in produtos:
+        x = input("Se deseja alterar a quantidade ou valor digite 1!\n"
+              "Se deseja adicionar a quantidade ou valor digite 2!\n"
+              "Se deseja reduzir a quantidade ou valor digite 3!")
+        if x == "1":
+            q = int(input("Nova Quantidade: "))
+            produtos[r]["quantidade"] = q
+
+        elif x == "2":
+            q = int(input("Quantidade a ser adicionada: "))
+            produtos[r]["quantidade"] += q
+
+        elif x == "3":
+            q = int(input("Quantidade a ser subtraida: "))
+            produtos[r]["quantidade"] -= q
+menu()
+
 """
-
-
-
 
 
 
