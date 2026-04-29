@@ -863,7 +863,41 @@ def gerenciar(r):
             produtos[r]["quantidade"] -= q
 menu()
 
+
+# 58. Criar sistema de login
+# Descrição: Criar um sistema de autenticação de usuários com cadastro e senha.
+
+
+usuario = {"luis123": "123luis"}
+def menu():
+    print("Bem vindo a autentificação, para continuar informe: ")
+    r = input("Caso ja possua uma conta digite 1!\nCaso queira fazer um cadastro digite 2!")
+    if r == "1":
+        l = input("Digite seu login: ")
+        if l in usuario:
+            s = input("Digite sua senha: ")
+            if s == usuario[l]:
+                print("Bem vindo!")
+            else: print("Senha Incorreta!")
+            return
+        else: print("Usuario Incorreto!")
+        return
+    elif r == "2":
+        print("Bem vindo ao Cadastro!")
+        cadastro()
+    else: print("De uma resposta valida!")
+    return
+def cadastro():
+    n = input("Digite seu novo Login: ")
+    if n in usuario:
+        print("Usuario ja existe! ")
+        return
+    else: s = input("Digite sua senha: ")
+    usuario[n] = s
+    print("Sua conta foi criada, Parabens.")
+
 """
+
 
 
 
