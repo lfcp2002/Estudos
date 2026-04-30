@@ -896,8 +896,53 @@ def cadastro():
     usuario[n] = s
     print("Sua conta foi criada, Parabens.")
 
-"""
 
+# 59. Criar gerador de senhas
+# Descrição: Criar um sistema que gera senhas aleatórias com diferentes níveis de complexidade.
+
+
+import random
+def n1():
+    c = ""
+    while len(c) < 8:
+        c += random.choice("abcdefghijklmnopqrstuvwxyz")
+    print("Sua senha e: " , c)
+
+def n2():
+    c = ""
+    while len(c) < 8:
+        l = random.choice("abcdefghijklmnopqrstuvwxyz")
+        n = random.choice("0123456789")
+        c += l
+        c += n
+    print("Sua senha e: ", c)
+
+def n3():
+    c = ""
+    c += random.choice("abcdefghijklmnopqrstuvwxyz").upper()
+    while len(c) < 7:
+        c += random.choice("abcdefghijklmnopqrstuvwxyz")
+        c += random.choice("0123456789")
+    while len(c) < 8:
+        c += random.choice("!@#$%*")
+    print(c)
+# Letra maiúscula no início de propósito, para seguir o normalmente feito!
+
+def gerar():
+    r = int(input("Qual o Nivel de complexidade você deseja?\n1 - Somente letras\n2 - Letras e numeros\n3 - Completo!"
+                  "\n Numero 1 a 3? "))
+    if r == 1:
+        n1()
+    elif r == 2:
+        n2()
+    elif r == 3:
+        n3()
+    else:
+        print("Digite um numero de 1 a 3!")
+        return
+gerar()
+
+"""
 
 
 
