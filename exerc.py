@@ -942,7 +942,63 @@ def gerar():
         return
 gerar()
 
+
+# 60. Criar simulador de caixa eletrônico
+# Descrição: Criar um sistema que simula operações de um caixa eletrônico, como saque, depósito e consulta de saldo.
+
+
+conta = {"nome":"luis", "senha":"luis123", "saldo":20}
+
+def menu():
+    r = input("Digite o nome para começar: ")
+    if r == conta["nome"]:
+        r2 =  input("Digite a Senha: ")
+        if r2 == conta["senha"]:
+            print("Bem vindo!")
+            caixa()
+        else:
+            print("Senha incorreta!")
+            return menu()
+    else:
+        print("Usuario Incorreto!")
+        return menu()
+
+def caixa():
+    r = int(input("Tecle 1 para verificar o saldo!\nTecle 2 para realizar um saque!"
+                  "\nTecle 3 para realizar um deposito!\nTecle 4 para sair!\nResposta: "))
+    if r == 1:
+        saldo()
+    elif r == 2:
+        saque()
+    elif r == 3:
+        deposito()
+    elif r == 4:
+        print("Obrigado.")
+        return menu()
+    else:
+        print("Digite uma opçao valida")
+        return caixa()
+
+def saldo():
+    s = conta["saldo"]
+    print("O saldo da sua conta e : " , s)
+    return caixa()
+
+def saque():
+    r = float(input("Digite um valor a ser sacado!"))
+    if r <= conta["saldo"]:
+        conta["saldo"] -= r
+        return caixa()
+    else:
+        print("Saldo insuficiente!")
+        return caixa()
+def deposito():
+    r = float(input("Digite um valor a ser depositado!"))
+    conta["saldo"] += r
+    return caixa()
+
 """
+
 
 
 
