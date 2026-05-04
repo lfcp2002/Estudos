@@ -997,10 +997,32 @@ def deposito():
     conta["saldo"] += r
     return caixa()
 
+
+# 61. Jogo de adivinhação avançado
+# Descrição: Criar uma versão do jogo de adivinhação com dicas para o usuário.
+
+
+palavra = "arroz"
+i = palavra[0]
+f = palavra[-1]
+c = 0
+print("A palavra estará em letra minuscula!\n"
+      "Você tem 3 tentativas!\n"
+      "Dica 1: A palavra começa com a letra:", i, ","
+      " e termina com a letra:", f,
+      "\nDica 2: A palavra tem exatas:", len(palavra), "Letras!")
+while c < 3:
+    r = input("Chute uma palavra: ").lower()
+    if r != palavra:
+        print("Tente novamente!")
+        c += 1
+    else:
+        print("Você acertou!")
+        break
+if c == 3 and r != palavra:
+    print("Número máximo de tentativas atingido!")
+
 """
-
-
-
 
 
 
