@@ -1022,7 +1022,36 @@ while c < 3:
 if c == 3 and r != palavra:
     print("Número máximo de tentativas atingido!")
 
+
+# 62. Sistema de votação
+# Descrição: Criar um sistema que registra votos e mostra o resultado final.
+
+
+v1 = 0
+v2 = 0
+t = 0
+while t != 5:
+    r = int(input("Qual se voto?\n1 para v1 e 2 para v2"))
+    if r == 1:
+        v1 += 1
+        t += 1
+    elif r == 2:
+        v2 += 1
+        t += 1
+    else: print("Digite um numero valido!")
+if v1 > v2:
+    print("V1 ganhou")
+else:
+    print("V2 ganhou")
+
 """
+
+
+
+
+
+
+
 
 
 
