@@ -1044,17 +1044,39 @@ if v1 > v2:
 else:
     print("V2 ganhou")
 
+
+# 62. Agenda com arquivos
+# Descrição: Criar uma agenda de contatos que salva e lê dados de arquivos.
+
+
+def menu():
+    print("Bem, vindo ao menu!")
+    r = int(input("Para adicionar um contato digite 1!\n"
+                  "Para visualizar um contato digite 2!\n"))
+    if r == 1:
+        adicionar()
+    elif r == 2:
+        visualizar()
+    else:
+        print("Digite um numero valido!")
+        return menu()
+def adicionar():
+    with open("agenda.txt", "r+") as r:
+        conteudo = r.read()
+        nome = input("Digite o nome do contato: ")
+        if nome in conteudo:
+            print("Contato ja existe!")
+        else:
+            numero = input("Digite o numero do contato: ")
+            r.write(f"{nome}:{numero}\n")
+            print("Contato adicionado!")
+def visualizar():
+    with open("agenda.txt", "r") as r:
+        conteudo = r.read()
+        print(conteudo)
+menu()
+
 """
-
-
-
-
-
-
-
-
-
-
 
 
 
