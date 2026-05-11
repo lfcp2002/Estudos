@@ -1076,7 +1076,107 @@ def visualizar():
         print(conteudo)
 menu()
 
+# 63. Sistema financeiro simples
+# Descrição: Criar um sistema que registra receitas, despesas e calcula saldo.
+
+
+receitas = 0
+despesas = 0
+
+def menu():
+    print("Bem vindo(a) ao menu!")
+    r = int(input("Para visualizar seu total de Despesas ou receitas? tecle 1!\n"
+                  "Para gerenciar as receitas, tecle 2!\n"
+                  "Para gerenciar as despesas tecle 3!"))
+    if r == 1:
+        visu()
+    elif r == 2:
+        rece()
+    elif r == 3:
+        desp()
+    else:
+        print("Digite um numero valido!")
+        return menu()
+def visu():
+    r = int(input("Para visualizar suas despesas e suas receitas? tecle 1!\n"
+              "Para visualizar suas Receitas, tecle 2\n"
+              "Para visualizar suas Despesas, tecle 3!"))
+    if r == 1:
+        print("Seu total de receitas e: ",receitas)
+        print("Seu total de despesas e: ",despesas)
+        saldo = receitas - despesas
+        print("Seu saldo é:", saldo)
+    elif r == 2:
+        print("Seu total de receitas e: ",receitas)
+        saldo = receitas - despesas
+        print("Seu saldo é:", saldo)
+    elif r == 3:
+        print("Seu total de despesas e: ",despesas)
+        saldo = receitas - despesas
+        print("Seu saldo é:", saldo)
+    else:
+        print("Digite um valor valido!")
+        return visu()
+def rece():
+    global receitas
+    r = int(input("Para retirar um valor das receitas, tecle 1!\n"
+                  "Para acresentar um valor as receitas, tecle 2!"))
+    if r == 1:
+        v = int(input("Digite o valor que gostaria de retirar: "))
+        if  receitas >= v:
+            receitas -= v
+            print("Valor alterado!")
+            saldo = receitas - despesas
+            print("Seu saldo é:", saldo)
+            return menu()
+        else:
+            print("Valor insuficiente!")
+            return rece()
+    elif r == 2:
+        v = int(input("Digite o valor que gostaria de acresentar: "))
+        receitas += v
+        print("Valor alterado!")
+        saldo = receitas - despesas
+        print("Seu saldo é:", saldo)
+        return menu()
+    else:
+        print("Digite um valor valido!")
+        return rece()
+def desp():
+    global despesas
+    r = int(input("Para retirar um valor das despesas, tecle 1!\n"
+                   "Para acresentar um valor as despesas, tecle 2!"))
+    if r == 1:
+        v = int(input("Digite o valor que gostaria de retirar: "))
+        if  despesas >= v:
+            despesas -= v
+            print("Valor alterado!")
+            saldo = receitas - despesas
+            print("Seu saldo é:", saldo)
+            return menu()
+        else:
+            print("Valor insuficiente!")
+            return desp()
+    elif r == 2:
+        v = int(input("Digite o valor que gostaria de acresentar: "))
+        despesas += v
+        print("Valor alterado!")
+        saldo = receitas - despesas
+        print("Seu saldo é:", saldo)
+        return menu()
+    else:
+        print("Digite um valor valido!")
+        return desp()
+
 """
+
+
+
+
+
+
+
+
 
 
 
