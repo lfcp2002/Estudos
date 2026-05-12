@@ -1168,6 +1168,99 @@ def desp():
         print("Digite um valor valido!")
         return desp()
 
+# 64. Controle de gastos
+# Descrição: Criar um sistema que organiza gastos por categoria e gera relatórios.
+
+
+gastos = {"alimentos":0,
+          "casa":0,
+          "lazer":0}
+
+def menu():
+    r = int(input("Para adicionar gastos: 1\nPara retirar gastos: 2\nPara gerar relatorio: 3"))
+    if r == 1:
+        adicionar()
+    elif r == 2:
+        retirar()
+    elif r == 3:
+        gerar()
+    else:
+        print("Digite um valor valido!")
+        return menu()
+
+def adicionar():
+    global gastos
+    r = int(input("1 Para alimentos!\n2 Para casa\n3 para lazer\n4 Para retornar ao Menu"))
+    if r == 1:
+        v = int(input("Qual o valor a ser adicionado?"))
+        if v > 0:
+            gastos["alimentos"] += int(v)
+        else: print("Valor deve ser maior q 0!")
+        return menu()
+    elif r == 2:
+        v = int(input("Qual o valor a ser adicionado?"))
+        if v > 0:
+            gastos["casa"] += int(v)
+            return menu()
+        else:
+            print("Valor deve ser maior q 0!")
+            return adicionar()
+    elif r == 3:
+        v = int(input("Qual o valor a ser adicionado?"))
+        if v > 0:
+            gastos["lazer"] += int(v)
+            return menu()
+        else:
+            print("Valor deve ser maior q 0!")
+            return adicionar()
+    elif r == 4:
+        return menu()
+    else:
+        print("Digite um valor valido!")
+        return adicionar()
+
+def retirar():
+    global gastos
+    r = int(input("1 Para alimentos!\n2 Para casa\n3 para lazer\n4 Para retornar ao Menu"))
+    if r == 1:
+        v = int(input("Qual o valor a ser retirado?"))
+        if v > 0:
+            gastos["alimentos"] -= int(v)
+            return menu()
+        else: print("Valor deve ser maior q 0!")
+        return retirar()
+    elif r == 2:
+        v = int(input("Qual o valor a ser retirado?"))
+        if v > 0:
+            gastos["casa"] -= int(v)
+            return menu()
+        else:
+            print("Valor deve ser maior q 0!")
+            return retirar()
+    elif r == 3:
+        v = int(input("Qual o valor a ser retirado?"))
+        if v > 0:
+            gastos["lazer"] -= int(v)
+            return menu()
+        else:
+            print("Valor deve ser maior q 0!")
+            return retirar()
+    elif r == 4:
+        return menu()
+    else:
+        print("Digite um valor valido!")
+        return retirar()
+
+def gerar():
+    global gastos
+    print("Seu total de gastos em alimentos e: ", gastos["alimentos"])
+    print("Seu total de casa e: ", gastos["casa"])
+    print("Seu total de lazer e: ", gastos["lazer"])
+    print("Seu total de gastos e: ", gastos["alimentos"] + gastos["casa"] + gastos["lazer"])
+    return menu()
+
+menu()
+
 """
 
 
